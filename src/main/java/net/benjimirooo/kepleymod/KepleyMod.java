@@ -1,5 +1,7 @@
 package net.benjimirooo.kepleymod;
 
+import net.benjimirooo.kepleymod.block.ModBlocks;
+import net.benjimirooo.kepleymod.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -50,6 +52,9 @@ public class KepleyMod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -63,6 +68,14 @@ public class KepleyMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SERPENTTONGUE);
+            event.accept(ModItems.EXCALIBUR);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.SHINER_BLOCK);
+        }
 
     }
 

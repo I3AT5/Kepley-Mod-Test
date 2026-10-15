@@ -1,7 +1,8 @@
 {
   "itemGroup.examplemod": "Example Mod Tab",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item",
+  "block.kepleymod.shiner_block": "Shiner",
+  "item.kepleymod.serpent_tongue": "Serpent Tongue",
+  "item.kepleymod.excalibur": "Excalibur",
 
   "examplemod.configuration.title": "Example Mod Configs",
   "examplemod.configuration.section.examplemod.common.toml": "Example Mod Configs",
